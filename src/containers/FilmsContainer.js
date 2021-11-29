@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import FilmDetails from '../components/FilmDetails';
+import FilmItem from '../components/FilmItem';
 import FilmsItems from '../components/FilmsItems';
 import HeaderNav from '../components/HeaderNav';
 
 const FilmsContainer = ({ films }) => {
   const [filmList, setFilms] = useState([]);
-  const [singleFilmId, setSingleFilm] = useState([]);
+  const [singleFilmId, setSingleFilm] = useState(null);
+  const [filmDetails, setFilmDetails] = useState(null);
 
   useEffect(() => {
     loadFilms(films[0].url)
@@ -21,19 +23,25 @@ const FilmsContainer = ({ films }) => {
   const handleFilmChange = id => {
     setSingleFilm(id);
   }
+
+  const handleFilmClick = film => {
+    setFilmDetails(film)
+  }
+
   const singleFilm = filmList.find(film => film.id === singleFilmId);
 
   return (
     <>
-      {/* {singleFilm ? <FilmItem film={singleFilm} /> :null} */}
+      {filmDetails ? <FilmDetails film={filmDetails} /> :null}
       <HeaderNav
         filmList={filmList}
         handleFilmChange={handleFilmChange}
       />
       {/* <FilmDetails
-        film={singleFilm}
+        film={filmDetails}
       /> */}
       <FilmsItems
+        handleFilmClick={handleFilmClick}
         singleFilm = {singleFilm}
         filmList={filmList}
       />

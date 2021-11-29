@@ -1,4 +1,6 @@
 .all-films {
+    justify-content: center;
+    align-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

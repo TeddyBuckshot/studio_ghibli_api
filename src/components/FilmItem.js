@@ -1,11 +1,10 @@
 import React from 'react';
 import "./static/FilmItem.css"
 
-const FilmItem = ({film, handleFilmChange}) => {
+const FilmItem = ({film, handleFilmClick}) => {
 
-  const handleClick = (event) => {
-    console.log(event.target.value)
-    handleFilmChange(event.target.value)
+  const handleClick = () => {
+    handleFilmClick(film)
   }
 
   const altTag = `${film.title}`;  

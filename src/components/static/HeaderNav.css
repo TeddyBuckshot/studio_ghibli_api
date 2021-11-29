@@ -1,0 +1,12 @@
+.header-nav{
+    text-align: center;
+    color: white;
+    background-color: brown;
+    margin: 10px;
+    border-radius: 10px;
+    border:solid black;
+}
+
+.select-box{
+    margin-bottom: 10px;
+}

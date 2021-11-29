@@ -2,7 +2,7 @@ import React from 'react';
 import FilmItem from './FilmItem';
 import "./static/FilmsItems.css"
 
-const FilmsItems = ({ filmList, singleFilm }) => {
+const FilmsItems = ({ filmList, singleFilm, handleFilmClick }) => {
 
     return (
         <div className='all-films'>
@@ -10,6 +10,7 @@ const FilmsItems = ({ filmList, singleFilm }) => {
                 if (singleFilm === undefined){
                     return(
                         <FilmItem
+                            handleFilmClick = {handleFilmClick}
                             key={film.id}
                             film={film}
                             index={index}
@@ -18,6 +19,7 @@ const FilmsItems = ({ filmList, singleFilm }) => {
                 } else if (singleFilm === film) {
                     return (
                         <FilmItem
+                            handleFilmClick = {handleFilmClick}
                             key={film.id}
                             film={film}
                             index={index}

@@ -5,16 +5,14 @@ const FilmDetails = ({film}) => {
     const altTag = `${film}`; 
 
     return (
-        <div className="film">
-          <div className='film-art-click'>
+        <div className="film-detail">
+          <div className='film-art'>
             <img className='img' src={film.image} alt={altTag} />
-            <div className="middle">
-              <div className="text">More details</div>
-            </div>
           </div>
           <div className='info'>
-            <h3>{film.title}</h3>
-            <h4>{film.director}</h4>
+            <h3>Description:</h3>
+            <p>{film.description}</p>
+            <h4>Release date: {film.release_date}</h4>
           </div>
         </div>
         );

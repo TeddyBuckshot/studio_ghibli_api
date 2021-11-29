@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import FilmDetails from '../components/FilmDetails';
 import FilmsItems from '../components/FilmsItems';
 import HeaderNav from '../components/HeaderNav';
-import FilmItem from '../components/FilmItem';
 
 const FilmsContainer = ({ films }) => {
   const [filmList, setFilms] = useState([]);
@@ -18,7 +18,6 @@ const FilmsContainer = ({ films }) => {
       .catch(err => console.error);//??
   }
 
-
   const handleFilmChange = id => {
     setSingleFilm(id);
   }
@@ -26,14 +25,16 @@ const FilmsContainer = ({ films }) => {
 
   return (
     <>
-      {singleFilm ? <FilmItem film={singleFilm} /> :null}
+      {/* {singleFilm ? <FilmItem film={singleFilm} /> :null} */}
       <HeaderNav
         filmList={filmList}
         handleFilmChange={handleFilmChange}
       />
+      {/* <FilmDetails
+        film={singleFilm}
+      /> */}
       <FilmsItems
         singleFilm = {singleFilm}
-        singleFilmID = {singleFilmId}
         filmList={filmList}
       />
     </>

@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./static/FilmItem.css"
 
-const FilmItem = ({film}) => {
+const FilmItem = ({film, handleFilmChange}) => {
 
+  const handleClick = (event) => {
+    console.log(event.target.value)
+    handleFilmChange(event.target.value)
+  }
 
   const altTag = `${film.title}`;  
   return (
@@ -10,7 +14,7 @@ const FilmItem = ({film}) => {
       <div className='film-art-click'>
         <img className='img' src={film.image} alt={altTag} />
         <div className="middle">
-          <div className="text">More details</div>
+          <button onClick={handleClick} className="text">More details</button>
         </div>
       </div>
       <div className='info'>
